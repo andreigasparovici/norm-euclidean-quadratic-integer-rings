@@ -1,0 +1,344 @@
+\documentclass[12t]{article}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{hyperref}
+
+\geometry{a4paper, total={6.5in, 10.5in}}
+
+\pagenumbering{gobble}
+
+\title{Inele de întregi pătratici euclidiene în raport cu funcţia normă}
+\author{Andrei Gasparovici}
+\date{5 Noiembrie 2020}
+
+\begin{document}
+
+\maketitle
+
+Fie $m, n \in \mathbb{Z}$ şi $\theta, \theta' \notin \mathbb{Q}$ rădăcinile ecuaţiei
+
+\begin{equation} \label{eq:def_theta}
+    x^2 + mx + n = 0, \; m, n \in \mathbb{Z}
+\end{equation}
+
+şi fie un inel de întregi pătratici \textbf{euclidian}
+
+\begin{equation} \label{eq:def_z_theta}
+    \mathbb{Z}[\theta] = \left\{ a + \theta b \,|\, a, b \in \mathbb{Z}\right\}
+\end{equation}
+
+Definim pe $\mathbb{Z[\theta]}$ funcţia normă
+
+\begin{equation} \label{eq:def_norm}
+    N : \mathbb{Z[\theta]} \to \mathbb{N}, \, N(a + \theta b) = |(a + \theta b)(a + \theta' b)|
+\end{equation}
+
+Fie $z_1, z_2 \in \mathbb{Z}[\theta]$, cu $z_2 \neq 0, \; z_1 = a_1 + \theta b_1$, $z_2 = a_2 + \theta b_2$.
+
+\begin{equation} \label{eq:ratio}
+    \frac{z_1}{z_2} = \frac{a_1 + \theta b_1}{a_2 + \theta b_2} = 
+    \frac{(a_1 + \theta b_1)(a_2 + \theta' b_2)}{(a_2 + \theta b_2)(a_2 + \theta' b_2)}
+\end{equation}
+
+Calculăm numitorul din (\ref{eq:ratio}):
+
+\begin{equation} \label{eq:ratio_denominator}
+    (a_2 + \theta b_2)(a_2 + \theta' b_2) = a_2^2 + a_2b_2(\theta + \theta') + b_2^2\theta\theta'
+\end{equation}
+
+Cu relaţiile lui Viete în (\ref{eq:def_theta}) avem:
+
+\begin{equation} \label{eq:viete}
+    \begin{array}{ll}
+    \theta + \theta' &= -m \\
+    \theta \cdot \theta' &= n \\
+    \end{array}
+\end{equation}
+
+Relaţia (\ref{eq:ratio_denominator}) devine:
+\begin{equation}
+    (a_2 + \theta b_2)(a_2 + \theta' b_2) = a_2^2 - m a_2 b_2 + n b_2^2 \in \mathbb{Z}
+\end{equation}
+
+Pentru cazul $a_2^2 - m a_2 b_2 + n b_2^2 > 0$, raportul (\ref{eq:ratio}) devine:
+
+\begin{equation} \label{eq:ratio_a}
+    \frac{z_1}{z_2} = \frac{(a_1 + \theta b_1)(a_2 + \theta' b_2)}{(a_2 + \theta b_2)(a_2 + \theta' b_2)} 
+    =  \frac{(a_1 + \theta b_1)(a_2 + \theta' b_2)}{|(a_2 + \theta b_2)(a_2 + \theta' b_2)|} 
+    = \frac{a_1 a_2 + \theta' a_1 b_2 + \theta a_2 b_1 + \theta \theta' b_1b_2}{N(z_2)}
+\end{equation}
+
+Aplicând (\ref{eq:viete}), obţinem că
+
+\begin{equation} \label{eq:ratio_a_viete}
+    \frac{z_1}{z_2} =
+    \frac{a_1 a_2 - (m + \theta) a_1 b_2 + \theta a_2 b_1 + n b_1b_2}{N(z_2)} =
+    \frac{q_1 + \theta q2}{N(z_2)} = 
+    r + \theta s, \quad r, s \in \mathbb{Q}
+\end{equation}
+
+Analog în cazul $a_2^2 - m a_2 b_2 + n b_2^2 < 0$.
+
+Definim
+
+\begin{equation} \label{eq:def_q_theta}
+    \mathbb{Q}[\theta] = \left\{ a + \theta b \,|\, a, b \in \mathbb{Q} \right\}
+\end{equation}
+
+şi funcţia
+
+\begin{equation} \label{eq:def_phi}
+    \varphi : \mathbb{Q}[\theta] \to \mathbb{N}, \, \varphi(a + \theta b) = |(a + \theta b)(a + \theta' b)|
+\end{equation}
+
+Se observă că restricţionând funcţia $\varphi$ la $\mathbb{Z}[\theta]$ obţinem funcţia normă:
+
+\begin{equation} \label{eq:phi_restricted_z}
+    \left.\varphi\right|_{\mathbb{Z}[\theta]} = N
+\end{equation}
+
+Inelul $\mathbb{Z}[\theta]$ este \textbf{euclidian} (\ref{eq:def_z_theta}). Deci $\forall z_1, z_2 \in \mathbb{Z}[\theta] $, avem:
+
+\begin{equation} \label{eq:z_theta_euclidean}
+    \begin{split}
+        \exists c, r \in \mathbb{Z}[\theta] \text{ a.î. }
+        & z_1 = z_2 c + r, \text{ cu } r = 0 \text{ sau } N(r) < N(z_2) \\
+        &\Leftrightarrow N(z_1 - z_2 c) < N(z_2) \\
+        &\Leftrightarrow \varphi \left(\frac{z_1}{z_2} - c\right) < 1
+    \end{split}
+\end{equation}
+
+Fie $c = x + \theta y$, $x, y \in \mathbb{Z}$.
+Atunci conform (\ref{eq:viete}), (\ref{eq:ratio_a_viete}) şi (\ref{eq:def_phi}):
+
+\begin{equation} \label{eq:phi_condition}
+\begin{split}
+    \varphi  \left(\frac{z_1}{z_2} - c\right) & =\varphi  \left(\frac{z_1}{z_2} - c\right) \\
+    &=\varphi(r + \theta s - x - \theta y) \\
+    &= \varphi \left( (r-x) + \theta(s-y) \right) \\
+    &=  \left| (r-x)^2 - m(r-x)(s-y) + n(s-y)^2\right|
+\end{split}
+\end{equation}
+
+În continuare, vom studia două cazuri particulare ale ecuaţiei (\ref{eq:def_theta}).
+
+\section*{Cazul 1} 
+\begin{equation} \label{eq:case_1}
+    x^2 - d = 0, \, d \in \mathbb{Z} \Rightarrow \begin{cases} m = 0 \\ n = -d \end{cases}
+\end{equation}
+
+Relaţia(\ref{eq:phi_condition}) devine:
+
+\begin{equation} \label{eq:phi_condition_case1}
+    \varphi \left(\frac{z_1}{z_2} - c\right)  = \left| (r-x)^2 - d(s-y)^2 \right| 
+   \Rightarrow \varphi \left(\frac{z_1}{z_2} - c\right) \leq (r-x)^2 + |d|(s-y)^2
+\end{equation}
+
+Alegem
+
+\begin{equation}
+\begin{split}
+    x = \left[ r + \frac{1}{2} \right] \in \mathbb{Z} \Rightarrow & x \leq r + \frac{1}{2} < x + 1 \\
+    & -\frac{1}{2} \leq r - x < \frac{1}{2} \\
+    & \boxed{|r - x| \leq \frac{1}{2}}
+\end{split}
+\end{equation}
+
+şi
+
+\begin{equation}
+\begin{split}
+    y = \left[ s + \frac{1}{2} \right] \in \mathbb{Z} \Rightarrow \boxed{|s - y| \leq \frac{1}{2}}
+\end{split}
+\end{equation}
+
+Inecuaţia din (\ref{eq:phi_condition_case1}) devine:
+
+\begin{equation}
+    \varphi \left(\frac{z_1}{z_2} - c\right) \leq \frac{1}{4}(1 + |d|)
+\end{equation}
+
+Aplicând (\ref{eq:z_theta_euclidean}) rezultă că:
+
+\begin{equation}
+    1 + |d| < 4 \Leftrightarrow |d| < 3
+\end{equation}
+
+Conform (\ref{eq:case_1}):
+
+\begin{equation*}
+    d \in \{\pm 1, \pm 2\}
+\end{equation*}
+
+Pentru $d = 1$:
+
+\begin{equation*}
+    x^2 - 1 = 0 \Rightarrow \theta, \theta' = \pm 1 \in \mathbb{Q}
+\end{equation*}
+
+Pentru $d = -1$:
+
+\begin{equation}
+    x^2 + 1 = 0 \Rightarrow \theta, \theta' = \pm i \notin \mathbb{Q} \Rightarrow \boxed{\mathbb{Z}[i] \text{ euclidian}}
+\end{equation}
+
+Pentru $d = 2$:
+
+\begin{equation}
+    x^2 - 2 = 0 \Rightarrow \theta, \theta' = \pm \sqrt{2} \notin \mathbb{Q} \Rightarrow \boxed{\mathbb{Z}[\sqrt{2}] \text{ euclidian}}
+\end{equation}
+
+Pentru $d = -2$:
+
+\begin{equation}
+    x^2 + 2 = 0 \Rightarrow \theta, \theta' = \pm i\sqrt{2} \notin \mathbb{Q} \Rightarrow \boxed{\mathbb{Z}[i\sqrt{2}] \text{ euclidian}}
+\end{equation}
+
+\section*{Cazul 2} 
+\begin{equation} \label{eq:case_2}
+x^2 + x + \frac{1 - d}{4} = 0, \, d \in \mathbb{Z},
+\text{ cu } d \equiv 1 (\text{mod}\ 4), d \text{ liber de pătrate }
+\Rightarrow \begin{cases} m = 1 \\ n = \frac{1-d}{4} \end{cases}
+\end{equation}
+
+Relaţia (\ref{eq:phi_condition}) devine:
+
+\begin{equation} \label{eq:phi_condition_case2}
+\begin{split}
+    \varphi \left(\frac{z_1}{z_2} - c\right)  &= \left| (r-x)^2 - (r-x)(s-y) + \frac{1-d}{4}(s-y)^2 \right| \\
+    &= \left| \left(r + \frac{s}{2} - x - \frac{1}{2}y\right)^2 - \frac{d}{4}(s-y)^2 \right|
+\end{split}
+\end{equation}
+
+Notând
+
+\begin{equation}
+\begin{split}
+    & r' = r + \frac{s}{2} \\
+    & s' = \frac{s}{2}
+\end{split}
+\end{equation}
+
+Relaţia (\ref{eq:phi_condition_case2}) devine:
+
+\begin{equation} \label{eq:phi_condition_case2_subst}
+    \varphi \left(\frac{z_1}{z_2} - c\right) =
+    \left| \left(r' - x - \frac{1}{2}y \right) ^2  + |d \left(s' - \frac{1}{2}y\right)^2  \right|
+\end{equation}
+
+Alegem
+
+\begin{equation}
+\begin{split}
+    y = \left[ 2s' + \frac{1}{2} \right] \in \mathbb{Z} \Rightarrow & 
+    y \leq 2s' + \frac{1}{2} < y + 1 \\
+    & -\frac{1}{2} \leq 2s'- y < \frac{1}{2} \\ 
+    & \left| 2s' - y \right| \leq \frac{1}{2} \\
+    & \boxed{\left| s' - \frac{y}{2} \right| \leq \frac{1}{4}}
+\end{split}
+\end{equation}
+
+şi
+
+\begin{equation}
+    x = \left[ r' - \frac{y}{2} + \frac{1}{2} \right] \in \mathbb{Z} \Rightarrow 
+    \boxed{|r' - x - \frac{1}{2}y| \leq \frac{1}{2}}
+\end{equation}
+
+
+Din (\ref{eq:phi_condition_case2_subst}) rezultă:
+
+\begin{equation}
+    \varphi \left(\frac{z_1}{z_2} - c\right) \leq
+    \left( r'- x - \frac{1}{2}y \right)^2 + |d|\left(s' - \frac{y}{2}\right)^2 \leq \frac{1}{4} + \frac{1}{16}|d|
+\end{equation}
+
+Aplicând (\ref{eq:z_theta_euclidean}), obţinem:
+
+\begin{equation}
+    \frac{1}{4} + \frac{1}{16}|d| < 1 \Leftrightarrow |d| < 12
+\end{equation}
+
+Conform (\ref{eq:case_2}):
+
+\begin{equation*}
+    d \in \{\pm 3, \pm 5, \pm 7, \pm 11\}
+\end{equation*}
+
+Pentru $d = 3$:
+
+\begin{equation*}
+    x^2 - x + \frac{1 - 3}{4} = 0
+    \Leftrightarrow x^2 - x - \frac{1}{2} = 0; \; -\frac{1}{2} \notin \mathbb{Z}
+\end{equation*}
+
+Pentru $d = -3$:
+
+\begin{equation}
+    x^2 - x + \frac{1 + 3}{4} = 0
+    \Leftrightarrow x^2 - x + 1 = 0
+    \Leftrightarrow \theta, \theta' = \frac{1 \pm i\sqrt{3}}{2} \notin \mathbb{Q}
+    \Rightarrow \boxed{\mathbb{Z}\left[\frac{1 + i\sqrt{3}}{2}\right] \text{ euclidian}}
+\end{equation}
+
+Pentru $d = 5$:
+
+\begin{equation}
+    x^2 - x + \frac{1 - 5}{4} = 0
+    \Leftrightarrow x^2 - x - 1 = 0
+    \Leftrightarrow \theta, \theta' = \frac{1 \pm \sqrt{5}}{2} \notin \mathbb{Q}
+    \Rightarrow \boxed{\mathbb{Z}\left[\frac{1 + \sqrt{5}}{2}\right] \text{ euclidian}}
+\end{equation}
+
+Pentru $d = -5$:
+
+\begin{equation*}
+    x^2 - x + \frac{1 + 5}{4} = 0
+    \Leftrightarrow x^2 - x + \frac{3}{2} = 0; \; \frac{3}{2} \notin \mathbb{Z}
+\end{equation*}
+
+Pentru $d = 7$:
+
+\begin{equation*}
+    x^2 - x + \frac{1 - 7}{4} = 0
+    \Leftrightarrow x^2 - x - \frac{3}{2} = 0; \; -\frac{3}{2} \notin \mathbb{Z}
+\end{equation*}
+
+Pentru $d = -7$:
+
+\begin{equation}
+    x^2 - x + \frac{1 + 7}{4} = 0
+    \Leftrightarrow x^2 - x + 2 = 0
+    \Leftrightarrow \theta, \theta' = \frac{1 \pm i\sqrt{7}}{2} \notin \mathbb{Q}
+    \Rightarrow \boxed{\mathbb{Z}\left[\frac{1 + i\sqrt{7}}{2}\right] \text{ euclidian}}
+\end{equation}
+
+Pentru $d = 11$:
+
+\begin{equation*}
+    x^2 - x + \frac{1 - 11}{4} = 0
+    \Leftrightarrow x^2 - x - \frac{5}{2} = 0; \; -\frac{5}{2} \notin \mathbb{Z}
+\end{equation*}
+
+Pentru $d = -11$:
+
+\begin{equation}
+    x^2 - x + \frac{1 + 11}{4} = 0
+    \Leftrightarrow x^2 - x + 3 = 0
+    \Leftrightarrow \theta, \theta' = \frac{1 \pm i\sqrt{11}}{2} \notin \mathbb{Q}
+    \Rightarrow \boxed{\mathbb{Z}\left[\frac{1 + i\sqrt{11}}{2}\right] \text{ euclidian}}
+\end{equation}
+
+\section*{Concluzie}
+Am găsit că inelele
+$\mathbb{Z}[i]$,
+$\mathbb{Z}[\sqrt{2}]$,
+$\mathbb{Z}[i\sqrt{2}]$,
+$\mathbb{Z}\left[\frac{1 + i\sqrt{3}}{2}\right]$,
+$\mathbb{Z}\left[\frac{1 + \sqrt{5}}{2}\right]$,
+$\mathbb{Z}\left[\frac{1 + i\sqrt{7}}{2}\right]$ şi
+$\mathbb{Z}\left[\frac{1 + i\sqrt{7}}{2}\right]$
+sunt euclidiene în raport cu funcţia normă.
+
+\end{document}
