@@ -9,7 +9,7 @@
     linkcolor=blue,
 }
 
-\geometry{a4paper, total={6.5in, 10.5in}}
+\geometry{a4paper, total={6.5in, 10in}}
 
 \pagenumbering{gobble}
 
@@ -27,16 +27,29 @@ Fie $m, n \in \mathbb{Z}$ şi $\theta, \theta' \notin \mathbb{Q}$ rădăcinile e
     x^2 + mx + n = 0, \; m, n \in \mathbb{Z}
 \end{equation}
 
-şi fie un inel de întregi pătratici \textbf{euclidian}
+şi fie un inel de întregi pătratici %\textbf{euclidian}
 
 \begin{equation} \label{eq:def_z_theta}
     \mathbb{Z}[\theta] = \left\{ a + \theta b \,|\, a, b \in \mathbb{Z}\right\}
 \end{equation}
 
+\vspace{.4cm}
+Ne propunem să găsim $\theta \in \mathbb{C} \backslash \mathbb{Q}$ pentru care $\mathbb{Z}[\theta]$ este \textbf{euclidian}.
+\vspace{.4cm}
+
 Definim pe $\mathbb{Z[\theta]}$ funcţia normă
 
 \begin{equation} \label{eq:def_norm}
     N : \mathbb{Z[\theta]} \to \mathbb{N}, \, N(a + \theta b) = |(a + \theta b)(a + \theta' b)|
+\end{equation}
+
+cu proprietăţile cunoscute:
+
+\begin{equation}
+N(z) = 0 \Leftrightarrow z = 0, \quad \forall z \in \mathbb{Z}[\theta]
+\end{equation}
+\begin{equation}
+N(z_1 z_2) = N(z_1)N(z_2), \quad \forall z_1, z_2 \in \mathbb{Z}[\theta]
 \end{equation}
 
 Fie $z_1, z_2 \in \mathbb{Z}[\theta]$, cu $z_2 \neq 0, \; z_1 = a_1 + \theta b_1$, $z_2 = a_2 + \theta b_2$.
@@ -55,10 +68,12 @@ Calculăm numitorul din raportul \eqref{eq:ratio}:
 Cu relaţiile lui Viete în \eqref{eq:def_theta} avem:
 
 \begin{equation} \label{eq:viete}
-    \begin{array}{ll}
+    %\begin{array}{ll}
+    \begin{cases}
     \theta + \theta' &= -m \\
     \theta \cdot \theta' &= n \\
-    \end{array}
+    %\end{array}
+    \end{cases}
 \end{equation}
 
 Relaţia \eqref{eq:ratio_denominator} devine:
@@ -85,6 +100,7 @@ Aplicând \eqref{eq:viete}, obţinem că
 
 Analog în cazul $a_2^2 - m a_2 b_2 + n b_2^2 < 0$.
 
+\vspace{.4cm}
 Definim
 
 \begin{equation} \label{eq:def_q_theta}
@@ -103,11 +119,11 @@ Se observă că restricţionând funcţia $\varphi$ la $\mathbb{Z}[\theta]$ obţ
     \left.\varphi\right|_{\mathbb{Z}[\theta]} = N
 \end{equation}
 
-Inelul $\mathbb{Z}[\theta]$ este \textbf{euclidian} \eqref{eq:def_z_theta}. Deci $\forall z_1, z_2 \in \mathbb{Z}[\theta] $, avem:
+Inelul $\mathbb{Z}[\theta]$ este \textbf{euclidian} în raport cu funcţia normă. Deci
 
 \begin{equation} \label{eq:z_theta_euclidean}
     \begin{split}
-        \exists c, r \in \mathbb{Z}[\theta] \text{ a.î. }
+	\forall z_1, z_2 \in \mathbb{Z}[\theta] \; \exists \, c, r \in \mathbb{Z}[\theta] \text{ a.î. }
         & z_1 = z_2 c + r, \text{ cu } r = 0 \text{ sau } N(r) < N(z_2) \\
         &\Leftrightarrow N(z_1 - z_2 c) < N(z_2) \\
         &\Leftrightarrow \varphi \left(\frac{z_1}{z_2} - c\right) < 1
