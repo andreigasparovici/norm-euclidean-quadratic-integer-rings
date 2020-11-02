@@ -4,6 +4,11 @@
 \usepackage{amsfonts}
 \usepackage{hyperref}
 
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+}
+
 \geometry{a4paper, total={6.5in, 10.5in}}
 
 \pagenumbering{gobble}
@@ -41,13 +46,13 @@ Fie $z_1, z_2 \in \mathbb{Z}[\theta]$, cu $z_2 \neq 0, \; z_1 = a_1 + \theta b_1
     \frac{(a_1 + \theta b_1)(a_2 + \theta' b_2)}{(a_2 + \theta b_2)(a_2 + \theta' b_2)}
 \end{equation}
 
-Calculăm numitorul din \ref{eq:ratio}:
+Calculăm numitorul din raportul \eqref{eq:ratio}:
 
 \begin{equation} \label{eq:ratio_denominator}
     (a_2 + \theta b_2)(a_2 + \theta' b_2) = a_2^2 + a_2b_2(\theta + \theta') + b_2^2\theta\theta'
 \end{equation}
 
-Cu relaţiile lui Viete în \ref{eq:def_theta} avem:
+Cu relaţiile lui Viete în \eqref{eq:def_theta} avem:
 
 \begin{equation} \label{eq:viete}
     \begin{array}{ll}
@@ -56,12 +61,12 @@ Cu relaţiile lui Viete în \ref{eq:def_theta} avem:
     \end{array}
 \end{equation}
 
-Relaţia \ref{eq:ratio_denominator} devine:
+Relaţia \eqref{eq:ratio_denominator} devine:
 \begin{equation}
     (a_2 + \theta b_2)(a_2 + \theta' b_2) = a_2^2 - m a_2 b_2 + n b_2^2 \in \mathbb{Z}
 \end{equation}
 
-Pentru cazul $a_2^2 - m a_2 b_2 + n b_2^2 > 0$, raportul \ref{eq:ratio} devine:
+Pentru cazul $a_2^2 - m a_2 b_2 + n b_2^2 > 0$, raportul \eqref{eq:ratio} devine:
 
 \begin{equation} \label{eq:ratio_a}
     \frac{z_1}{z_2} = \frac{(a_1 + \theta b_1)(a_2 + \theta' b_2)}{(a_2 + \theta b_2)(a_2 + \theta' b_2)} 
@@ -69,7 +74,7 @@ Pentru cazul $a_2^2 - m a_2 b_2 + n b_2^2 > 0$, raportul \ref{eq:ratio} devine:
     = \frac{a_1 a_2 + \theta' a_1 b_2 + \theta a_2 b_1 + \theta \theta' b_1b_2}{N(z_2)}
 \end{equation}
 
-Aplicând \ref{eq:viete}, obţinem că
+Aplicând \eqref{eq:viete}, obţinem că
 
 \begin{equation} \label{eq:ratio_a_viete}
     \frac{z_1}{z_2} =
@@ -98,7 +103,7 @@ Se observă că restricţionând funcţia $\varphi$ la $\mathbb{Z}[\theta]$ obţ
     \left.\varphi\right|_{\mathbb{Z}[\theta]} = N
 \end{equation}
 
-Inelul $\mathbb{Z}[\theta]$ este \textbf{euclidian} \ref{eq:def_z_theta}. Deci $\forall z_1, z_2 \in \mathbb{Z}[\theta] $, avem:
+Inelul $\mathbb{Z}[\theta]$ este \textbf{euclidian} \eqref{eq:def_z_theta}. Deci $\forall z_1, z_2 \in \mathbb{Z}[\theta] $, avem:
 
 \begin{equation} \label{eq:z_theta_euclidean}
     \begin{split}
@@ -110,7 +115,7 @@ Inelul $\mathbb{Z}[\theta]$ este \textbf{euclidian} \ref{eq:def_z_theta}. Deci $
 \end{equation}
 
 Fie $c = x + \theta y$, $x, y \in \mathbb{Z}$.
-Atunci conform \ref{eq:viete}, \ref{eq:ratio_a_viete} şi \ref{eq:def_phi}:
+Atunci conform \eqref{eq:viete}, \eqref{eq:ratio_a_viete} şi \eqref{eq:def_phi}:
 
 \begin{equation} \label{eq:phi_condition}
 \begin{split}
@@ -121,14 +126,14 @@ Atunci conform \ref{eq:viete}, \ref{eq:ratio_a_viete} şi \ref{eq:def_phi}:
 \end{split}
 \end{equation}
 
-În continuare, vom studia două cazuri particulare ale ecuaţiei \ref{eq:def_theta}.
+În continuare, vom studia două cazuri particulare ale ecuaţiei \eqref{eq:def_theta}.
 
 \section*{Cazul 1} 
 \begin{equation} \label{eq:case_1}
     x^2 - d = 0, \, d \in \mathbb{Z} \Rightarrow \begin{cases} m = 0 \\ n = -d \end{cases}
 \end{equation}
 
-Relaţia \ref{eq:phi_condition} devine:
+Relaţia \eqref{eq:phi_condition} devine:
 
 \begin{equation} \label{eq:phi_condition_case1}
     \varphi \left(\frac{z_1}{z_2} - c\right)  = \left| (r-x)^2 - d(s-y)^2 \right| 
@@ -153,19 +158,19 @@ Alegem
 \end{split}
 \end{equation}
 
-Inecuaţia din \ref{eq:phi_condition_case1} devine:
+Inecuaţia din \eqref{eq:phi_condition_case1} devine:
 
 \begin{equation}
     \varphi \left(\frac{z_1}{z_2} - c\right) \leq \frac{1}{4}(1 + |d|)
 \end{equation}
 
-Aplicând \ref{eq:z_theta_euclidean} rezultă că:
+Aplicând \eqref{eq:z_theta_euclidean} rezultă că:
 
 \begin{equation}
     1 + |d| < 4 \Leftrightarrow |d| < 3
 \end{equation}
 
-Conform \ref{eq:case_1}:
+Conform \eqref{eq:case_1}:
 
 \begin{equation*}
     d \in \{\pm 1, \pm 2\}
@@ -202,7 +207,7 @@ x^2 + x + \frac{1 - d}{4} = 0, \, d \in \mathbb{Z},
 \Rightarrow \begin{cases} m = 1 \\ n = \frac{1-d}{4} \end{cases}
 \end{equation}
 
-Relaţia \ref{eq:phi_condition} devine:
+Relaţia \eqref{eq:phi_condition} devine:
 
 \begin{equation} \label{eq:phi_condition_case2}
 \begin{split}
@@ -220,7 +225,7 @@ Notând
 \end{split}
 \end{equation}
 
-Relaţia \ref{eq:phi_condition_case2} devine:
+Relaţia \eqref{eq:phi_condition_case2} devine:
 
 \begin{equation} \label{eq:phi_condition_case2_subst}
     \varphi \left(\frac{z_1}{z_2} - c\right) =
@@ -247,20 +252,20 @@ Alegem
 \end{equation}
 
 
-Din \ref{eq:phi_condition_case2_subst} rezultă:
+Din \eqref{eq:phi_condition_case2_subst} rezultă:
 
 \begin{equation}
     \varphi \left(\frac{z_1}{z_2} - c\right) \leq
     \left( r'- x - \frac{1}{2}y \right)^2 + |d|\left(s' - \frac{y}{2}\right)^2 \leq \frac{1}{4} + \frac{1}{16}|d|
 \end{equation}
 
-Aplicând \ref{eq:z_theta_euclidean}, obţinem:
+Aplicând \eqref{eq:z_theta_euclidean}, obţinem:
 
 \begin{equation}
     \frac{1}{4} + \frac{1}{16}|d| < 1 \Leftrightarrow |d| < 12
 \end{equation}
 
-Conform \ref{eq:case_2}:
+Conform \eqref{eq:case_2}:
 
 \begin{equation*}
     d \in \{\pm 3, \pm 5, \pm 7, \pm 11\}
