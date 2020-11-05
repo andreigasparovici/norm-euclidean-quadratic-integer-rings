@@ -52,19 +52,19 @@ N(z) = 0 \Leftrightarrow z = 0, \quad \forall z \in \mathbb{Z}[\theta]
 N(z_1 z_2) = N(z_1)N(z_2), \quad \forall z_1, z_2 \in \mathbb{Z}[\theta]
 \end{equation*}
 
-Fie $z_1, z_2 \in \mathbb{Z}[\theta]$, $z_2 \neq 0, \; z_1 = a_1 + \theta b_1$, $z_2 = a_2 + \theta b_2$,
-$a_1,a_2,b_1,b_2 \in \mathbb{Z}$. Atunci:
+Fie $z_1, z_2 \in \mathbb{Z}[\theta]$, $z_2 \neq 0$. Arătăm că:
+
+\begin{equation*}
+    \frac{z_1}{z_2} = r + \theta s, \quad r, s \in \mathbb{Q}è
+\end{equation*}
+
+Fie $z_1 = a_1 + \theta b_1$, $z_2 = a_2 + \theta b_2, a_1,a_2,b_1,b_2 \in \mathbb{Z}$. Atunci:
 
 \begin{equation} \label{eq:ratio}
     \frac{z_1}{z_2} = \frac{a_1 + \theta b_1}{a_2 + \theta b_2} = 
     \frac{(a_1 + \theta b_1)(a_2 + \theta' b_2)}{(a_2 + \theta b_2)(a_2 + \theta' b_2)}
 \end{equation}
 
-Arătăm că:
-
-\begin{equation*}
-    \frac{z_1}{z_2} = r + \theta s, \quad r, s \in \mathbb{Q}è
-\end{equation*}
 
 Calculăm numitorul din raportul \eqref{eq:ratio}:
 
@@ -100,7 +100,7 @@ Aplicând \eqref{eq:viete}, obţinem că
 
 \begin{equation} \label{eq:ratio_a_viete}
     \frac{z_1}{z_2} =
-    \frac{a_1 a_2 - (m + \theta) a_1 b_2 + \theta a_2 b_1 + n b_1b_2}{N(z_2)} =
+    \frac{a_1 a_2 - m a_1 b_2 + \theta a_2 b_1 + n b_1b_2}{N(z_2)} =
     \frac{q_1 + \theta q_2}{N(z_2)} = 
     r + \theta s, \quad r, s \in \mathbb{Q}
 \end{equation}
@@ -193,7 +193,7 @@ Aplicând \eqref{eq:z_theta_euclidean} rezultă că:
     1 + |d| < 4 \Leftrightarrow |d| < 3
 \end{equation*}
 
-Conform \eqref{eq:case_1}:
+Cum $d \in \mathbb{Z}$ \eqref{eq:case_1}, obţinem:
 
 \begin{equation*}
     d \in \{\pm 1, \pm 2\}
@@ -226,7 +226,7 @@ Pentru $d = -2$:
 \section*{Cazul 2} 
 \begin{equation} \label{eq:case_2}
 x^2 + x + \frac{1 - d}{4} = 0, \, d \in \mathbb{Z},
-\text{ cu } d \equiv 1 (\text{mod}\ 4), d \text{ liber de pătrate }
+\text{ cu } d \equiv 1 \; (\text{mod}\ 4), \; d \text{ liber de pătrate }
 \Rightarrow \begin{cases} m = 1 \\ n = \frac{1-d}{4} \end{cases}
 \end{equation}
 
@@ -288,7 +288,7 @@ Aplicând \eqref{eq:z_theta_euclidean}, obţinem:
     \frac{1}{4} + \frac{1}{16}|d| < 1 \Leftrightarrow |d| < 12
 \end{equation*}
 
-Conform \eqref{eq:case_2}:
+Conform $d \equiv 1 \; (\text{mod}\ 4), \; d \text{ liber de pătrate }$ \eqref{eq:case_2}:
 
 \begin{equation*}
     d \in \{\pm 3, \pm 5, \pm 7, \pm 11\}
