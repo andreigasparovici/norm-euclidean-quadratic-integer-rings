@@ -27,7 +27,7 @@ Fie $m, n \in \mathbb{Z}$ şi $\theta, \theta' \notin \mathbb{Q}$ rădăcinile e
     x^2 + mx + n = 0, \; m, n \in \mathbb{Z}
 \end{equation}
 
-şi fie un inel de întregi pătratici %\textbf{euclidian}
+şi fie un inel de întregi pătratici
 
 \begin{equation} \label{eq:def_z_theta}
     \mathbb{Z}[\theta] = \left\{ a + \theta b \,|\, a, b \in \mathbb{Z}\right\}
@@ -130,8 +130,8 @@ Inelul $\mathbb{Z}[\theta]$ este \textbf{euclidian} în raport cu funcţia norm�
 
 \begin{equation} \label{eq:z_theta_euclidean}
     \begin{split}
-	\forall z_1, z_2 \in \mathbb{Z}[\theta] \quad \exists \, c, r \in \mathbb{Z}[\theta] \quad \text{a.î.} \quad
-        & z_1 = z_2 c + r, \text{ cu } r = 0 \text{ sau } N(r) < N(z_2) \\
+	\forall z_1, z_2 \in \mathbb{Z}[\theta], z_2 \neq 0 \quad \exists \, c, r \in \mathbb{Z}[\theta] \quad \text{a.î.} \quad
+        & z_1 = z_2 c + r, \text{ cu } N(r) < N(z_2) \\
         &\Leftrightarrow N(z_1 - z_2 c) < N(z_2) \\
         &\Leftrightarrow \varphi \left(\frac{z_1}{z_2} - c\right) < 1
     \end{split}
@@ -252,7 +252,7 @@ Relaţia \eqref{eq:phi_condition_case2} devine:
 
 \begin{equation} \label{eq:phi_condition_case2_subst}
     \varphi \left(\frac{z_1}{z_2} - c\right) =
-    \left| \left(r' - x - \frac{1}{2}y \right) ^2  + |d \left(s' - \frac{1}{2}y\right)^2  \right|
+    \left| \left(r' - x - \frac{1}{2}y \right) ^2  + d \left(s' - \frac{1}{2}y\right)^2  \right|
 \end{equation}
 
 Alegem
